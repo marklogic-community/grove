@@ -1,4 +1,5 @@
 # Grove Documentation Website
+
 This branch contains the code that generates the github.io website for Grove.
 
 Before you can get going you must have Ruby installed. This project has .ruby-version and .ruby-gem files if you are using [RVM](https://rvm.io/).
@@ -13,12 +14,14 @@ ruby 2.4.2...
 # Setup
 
 ### Ensure necessary tools are installed
+
 ```bash
 sudo gem install bundler
 sudo gem install jekyll
 ```
 
 ### Install the necessary Ruby gems
+
 ```bash
 sudo bundle install
 ```
@@ -28,6 +31,7 @@ sudo bundle install
 This website is written using [Jekyll](https://jekyllrb.com/) and Markdown. You can read about creating github pages websites [here](https://pages.github.com/).
 
 ### Run the Jekyll Server
+
 ```bash
 bundle exec jekyll serve
 ```
@@ -41,4 +45,5 @@ Open the docs website at the server address displayed in the terminal, e.g.:
 Most of the content is located in `_pages` with screenshots in `images`. Making changes to files in the site prompts Jekyll to regenerate the website.
 
 ### Updating the Live website
+
 There is a travis job that builds and deploys the website every time a push is made to the **docs** branch.
