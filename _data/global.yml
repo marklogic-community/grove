@@ -1,0 +1,5 @@
+# Site Settings
+title: 'Grove Documentation'
+description: 'Grove, a toolkit full of tooling, templates, and other resources that help with building UI applications on top of MarkLogic.'
+odh_icon: '/images/favicon.ico'
+sm_version: '1.0.0-rc.1'    # latest
