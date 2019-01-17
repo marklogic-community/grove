@@ -1,14 +1,21 @@
 main:
-  - { url: '/', text: 'Getting Started' }
-  - { url: '/how-does-it-work/', text: 'How Does it Work?' }
-  - { url: '/how-to-use/', text: 'How do I Use it?' }
+  - { url: '/', text: 'About Grove' }
   - {
-    url: '/docs/',
-    text: 'Docs',
+    # TODO: top-level Guides page?
+    # url: '/Guides/',
+    text: 'Guides',
     childPages: [
-      { url: '/docs/libraries/', text: 'Libraries' },
+      { url: '/guides/getting-started/', text: 'Getting Started' },
+      { url: '/guides/data-hub-framework', text: 'Grove and DHF' }
     ]
-  }
+    }
+  # - {
+  #   url: '/docs/',
+  #   text: 'Docs',
+  #   childPages: [
+  #     { url: '/docs/libraries/', text: 'Libraries' },
+  #   ]
+  # }
   - { url: '/faqs/', text: 'FAQs' }
-  - { url: '/troubleshooting/', text: 'Troubleshooting' }
+  # - { url: '/troubleshooting/', text: 'Troubleshooting' }
   - { absurl: 'https://github.com/marklogic-community/grove', text: 'Grove on GitHub' }
