@@ -1,6 +1,6 @@
 ---
 layout: inner
-title: Getting Started
+title: Getting Started with Grove
 lead_text: ''
 permalink: /guides/getting-started/
 ---
@@ -102,6 +102,10 @@ cd marklogic
 gradlew.bat loadSampleData
 cd ..
 ```
+
+## Next Steps
+
+If you have created a React UI, see the [React Developers Guide](/grove/guides/react/) for information.
 
 # VERY Quick Start
 
