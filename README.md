@@ -16,14 +16,14 @@ ruby 2.4.2...
 ### Ensure necessary tools are installed
 
 ```bash
-sudo gem install bundler
-sudo gem install jekyll
+gem install bundler
+gem install jekyll
 ```
 
 ### Install the necessary Ruby gems
 
 ```bash
-sudo bundle install
+bundle install
 ```
 
 # Viewing the Website
