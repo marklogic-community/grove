@@ -23,15 +23,15 @@ You may get errors in your code editor when opening React files if it does not h
 
 This recipe starts with the basic steps to get it done, for the busy. Then, there is a section explaining why it works, which could be worth knowing.
 
-1. **Create a React Component that renders the view you wish to see.** 
+1. **Create a React Component that renders the view you wish to see.**
 
     This Component will receive the following props: `detail`, which contains the document or entity that is being viewed, in json or xml; `contentType`, for the contentType of that document or entity (for example, 'application/json' or 'application/xml; `label`, which is human-readable; and `id`, which is not.
 
-    To match the common organization of Grove React projects, we recommend creating this component in a file named for your component in `ui/src/components/MyDetailTemplate.js`. Of course, you don't actually have to call your template MyDetailTemplate if you don't want. Standard practice within the React community is to assign your component to a variable and then export it at the bottom of the file: 
+    To match the common organization of Grove React projects, we recommend creating this component in a file named for your component in `ui/src/components/MyDetailTemplate.js`. Of course, you don't actually have to call your template MyDetailTemplate if you don't want. Standard practice within the React community is to assign your component to a variable and then export it at the bottom of the file:
 
     ```javascript
     import React from 'react';
-     
+
     const MyDetailTemplate = (props) => {
       return (
         <div>
@@ -42,7 +42,7 @@ This recipe starts with the basic steps to get it done, for the busy. Then, ther
         </div>
       );
     };
-     
+
     export default MyDetailTemplate;
     ```
 
@@ -54,13 +54,13 @@ This recipe starts with the basic steps to get it done, for the busy. Then, ther
 
 2. **Pass your template to the DetailContainer.**
 
-    Open up `ui/src/components/Routes.js`. This includes a `<DetailContainer/>`. You can attach the one you created by, first, importing it: 
+    Open up `ui/src/components/Routes.js`. This includes a `<DetailContainer/>`. You can attach the one you created by, first, importing it:
 
     ```javascript
     import MyDetailTemplate from './MyDetailTemplate';
     ```
 
-    Secondly, pass your component to `<DetailContainer/>`, keeping other props in place (and NOTE that you can pass any props you wish in here, and they will be available in your custom MyDetailTemplate component): 
+    Secondly, pass your component to `<DetailContainer/>`, keeping other props in place (and NOTE that you can pass any props you wish in here, and they will be available in your custom MyDetailTemplate component):
 
     ```javascript
     <DetailContainer
@@ -100,7 +100,7 @@ You can use the `<CardResult/>` in this library as a starting point for your cus
 ```javascript
 import React from 'react';
 import { CardResult, SearchView, SearchSnippet} from 'grove-core-react-components';
- 
+
 const CustomSearchResultContent = props => {
   return (
     <div>
@@ -117,7 +117,7 @@ const CustomSearchResultContent = props => {
     </div>
   )
 };
- 
+
 const CustomSearchResult = props => {
   // 1. Suppress the header, though you could change the header instead.
   // 2. Add 'You got a result!' to each result content using the above component.
@@ -130,7 +130,7 @@ const CustomSearchResult = props => {
     />
   );
 };
- 
+
 export default CustomSearchResult;
 ```
 
@@ -203,3 +203,39 @@ You can extract additional information from MarkLogic's Search API by adding an 
     ```
 
     Though, note that you could also combine several extracts together.
+
+### Add an image to the top Navbar
+
+You may prefer to have an image in the top left corner of the navigation bar.  Grove's MLNavbar component was designed with this in mind and can be customized with a prop (or two if you'd like to style the image, too).
+
+1. **Open `ui/src/components/Navbar.js`**  A custom Navbar component that renders an MLNavbar child component was provided as part of the Grove installation.
+
+2. **Copy the image to `ui/src/components`** For this example, `Logo.png` was copied into this directory.
+
+3. **Import the image**  Because this project uses Webpack, you must import a file directly into the module so that it will be included properly in the Webpack bundle.  In this example, importing a file provides a string value for the final path so that the `src` attribute of an image can properly locate the file.
+
+    ```javascript
+      import myLogo from './Logo.png';
+    ```
+
+4. **Pass the image as a prop to MLNavbar**  Add the `logo` prop to MLNavbar, passing `myLogo` to this child component.
+
+    ```javascript
+      <MLNavbar {...props} brandLink={brandLink} logo={myLogo}>
+    ```
+    Go back to browser to inspect the result.  The default position may be suitable for your needs.  If it is not, continue to the next step.
+
+5.  **(Optional) Style the image with an inline style**  The MLNavbar component also has a `logoStyle` prop.  This prop allows you to pass down an inline style object to assist with tasks such as sizing or positioning the image.  You may need to customize the styling to suit your needs and properly fit the image.  Note that a React inline style object uses camelCased properties rather than a CSS string.  The following is a simple example that restricts the size of the image and moves it slightly to align it better with the navigation options.
+
+    ```javascript
+      <MLNavbar
+        {...props}
+        brandLink={brandLink}
+        logo={mlLogo}
+        logoStyle={ {marginTop: '-5px', maxWidth: '100px', maxHeight: '45px'} }
+      >
+    ```
+
+    Continue interating until you are happy with the styling.
+
+And that's it.  You now have your Grove application showing your custom logo.
