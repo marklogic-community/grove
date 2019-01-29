@@ -2,7 +2,9 @@
 
 This branch contains the code that generates the github.io website for Grove.
 
-Before you can get going you must have Ruby installed. This project has .ruby-version and .ruby-gem files if you are using [RVM](https://rvm.io/).
+Before you can get going you must have Ruby installed. This project has .ruby-version and .ruby-gem files if you are using [RVM](https://rvm.io/).  
+
+If you choose use RVM, you may need to install `gpg` on your system prior to following the instructions on the RVM site.  On MacOS with [Homebrew](https://brew.sh/), use the command `brew install gnupg`.
 
 This process has been tested successfully on Ruby version 2.4.2.
 
