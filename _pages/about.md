@@ -31,27 +31,3 @@ Someone else might have already asked.
 
 ### Found a bug? Have a comment?
 [File an issue on Github](https://github.com/marklogic-community/grove/issues/new) and we will see it.
-
-
-h2. Roadmap
-
-h1. A high-level overview of the Grove Roadmap is presented on the [Grove Roadmap|https://wiki.marklogic.com/display/SAL/Grove+Roadmap] page. For more detail, look at the [Grove Jira project|https://project.marklogic.com/jira/projects/Grove/summary]. Please comment, volunteer to pick up existing tickets, or create new tickets to help us drive our requirements. MBO work is welcome, and we can help coordinate that. Please discuss it with your manager.
-
-
-h2. Learning More
-
-h1. The child pages of this Wiki page contain various bits of documentation, including Design and Starter Guides:
-
-
-
-* [Grove Design|https://wiki.marklogic.com/display/SAL/Grove+Design]
-* [Grove Guides|https://wiki.marklogic.com/display/SAL/Grove+Guides]
-* [Grove Implementations|https://wiki.marklogic.com/display/SAL/Grove+Implementations]
-* [Grove Plugins|https://wiki.marklogic.com/display/SAL/Grove+Plugins]
-* [Grove Presentations|https://wiki.marklogic.com/display/SAL/Grove+Presentations]
-* [Grove Project|https://wiki.marklogic.com/display/SAL/Grove+Project]
-* [Grove Release Notes|https://wiki.marklogic.com/display/SAL/Grove+Release+Notes]
-* [Grove Roadmap|https://wiki.marklogic.com/display/SAL/Grove+Roadmap]
-* [Grove Screencasts|https://wiki.marklogic.com/display/SAL/Grove+Screencasts]
-* 
-
