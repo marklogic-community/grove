@@ -6,8 +6,8 @@ main:
     text: 'Guides',
     childPages: [
       { url: '/guides/getting-started/', text: 'Getting Started' },
-      { url: '/guides/react/', text: 'React UI' },
-      { url: '/guides/data-hub-framework', text: 'Grove and DHF' }
+      { url: '/guides/react/', text: 'React UI' }
+      # { url: '/guides/data-hub-framework', text: 'Grove and DHF' }
     ]
     }
   # - {
