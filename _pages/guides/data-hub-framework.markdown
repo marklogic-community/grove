@@ -1,6 +1,6 @@
 ---
 layout: inner
-title: Grove and DHF
+title: Grove and the Data Hub
 lead_text: ''
 permalink: /guides/data-hub-framework/
 ---
@@ -9,11 +9,11 @@ permalink: /guides/data-hub-framework/
 
 We often want to run Grove as a UI working alongside a [MarkLogic Data Hub](https://marklogic.github.io/marklogic-data-hub/). This guide provides the mechanics on how to do this, and provides a choice of method.
 
-This guide has been vetted on both Data Hub 5.0 and the Data Hub Framework 4.3.1. 
+This guide has been vetted on both Data Hub 5.x and the Data Hub Framework 4.3.1. 
 
 ## Migrating Grove-related artifacts and code to the Data Hub
 
-In order to run a Grove UI project alongside a MarkLogic Data Hub, we recommend migrating Grove related artifacts and code from its code base into your Data Hub project.  
+In order to run a Grove UI project alongside a MarkLogic Data Hub, we recommend migrating Grove related artifacts and code from its code base into your Data Hub project.  This approach was tested against both the Data Hub and the Data Hub Service.
 
 Note that this implies some coordination between the Data Hub project and Grove even after migration of Grove's core capabilities. If possible, it is easiest to manage both projects within the same code repository. The Grove files should all be within a dedicated parent directory. (For example, `grove/ui` and `grove/middle-tier`. Note that there is nothing magic about the `grove` directory name, so call it whatever you want.)
 
@@ -24,10 +24,10 @@ The advantages of this approach include:
 - If code is maintained together in the same repository, consistent versioning can be ensured.
 - The Grove UI becomes a downstream consumer of the Data Hub.
 
-There are some downsides to this approach:
+There are some disadvantages to this approach:
 - UI specific code will reside in close proximity to backend specific configurations.  This might not be as preferable to some development teams.
 - Any CRUD operations performed by the Grove project will write to the Data Hub's FINAL database.
-
+- The security approach for Data Hub differs from that of Grove.  It is best to drop that direction and use MarkLogic's guidance for the Data Hub.
 
 ### How to implement the recommended approach, step-by-step:
 
@@ -36,7 +36,7 @@ Prerequisite: MarkLogic Data Hub has been deployed to your MarkLogic host.
 [Optional] If you previously installed Grove to its default database via the `mlDeploy` command within the `marklogic` directory, remove the Grove-specific configs before proceeding:
         
     > cd grove/marklogic
-    > ./gradlew mlUndeploy
+    > ./gradlew mlUndeploy -Pconfirm=true
     
 
 ### Steps to move Grove modules to the Data Hub
@@ -44,13 +44,17 @@ Prerequisite: MarkLogic Data Hub has been deployed to your MarkLogic host.
 1. Determine the MarkLogic host and port the data-hub-FINAL app server is running on.
 2. At the command line, from within the top level of your Grove project, (the directory with `middle-tier` and `ui` directories inside it), run `grove config` and enter the host and port of the data-hub-FINAL app server.  This will update environment variables for your project.
 3. Create the `ui-modules` directory inside the Data Hub project: `data-hub/src/main/ui-modules`.
-4. Update the Data Hub's `gradle.properties` to register this new location for MarkLogic module deployments.  Add the following line to `gradle.properites`:
+4. Update the Data Hub's `gradle.properties` to register this new location for MarkLogic module deployments.  Add the following line to `gradle.properes`:
 
     ```
     mlModulePaths=src/main/ml-modules,src/main/ui-modules
     ```
 
+<<<<<<< Updated upstream
 5. __Only necessary for Data Hub 5.0.1__ Update the Data Hub's `build.gradle` to use a newer version of ml-gradle.  Add the `dependencies` to the `buildscript` object around line 5: 
+=======
+5. If you are using a version of the Data Hub older than 5.0.1, update the Data Hub's `build.gradle` to use a newer version of ml-gradle (3.14.0 or higher).  Add the `dependencies` to the `buildscript` object around line 5: 
+>>>>>>> Stashed changes
 
     ```JSON
     dependencies {
@@ -70,14 +74,19 @@ Prerequisite: MarkLogic Data Hub has been deployed to your MarkLogic host.
     data-hub/src/main/ui-modules
     ```
 
-7. Copy the contents of the Grove default user profile and a dictionary document to the Data Hub project. Copy 
+7. Copy the contents of the Grove default user profile and a dictionary document to the Data Hub project. Copy the files in 
     ```
     grove/marklogic/ml-content
     
     to 
     
-    data-hub/src/main
+    data-hub/src/main/ui-data
     ```
+
+To ensure the deployment process deploys these files, also add the folllowing line to your `gradle.properies` file:
+  
+    mlDataPaths=src/main/ml-data,src/main/ui-data
+
 
 8. Edit the query options used by your Grove middle-tier's search route (by default, these query options are called `all` and are found in the `data-hub/ui-modules/options/all.xml` file) to remove the following blocks:
 
@@ -93,7 +102,14 @@ Prerequisite: MarkLogic Data Hub has been deployed to your MarkLogic host.
     </constraint>
     ```
 
-9. Make any other necessary changes to the query options file. For example, you may need to remove the `<additional-query>` specifying that only docs in the `data` collection are returned.  There may be a Data Hub specific collection that is a natural fit to limit the search results for your Grove application.  
+9. Make any other necessary changes to the query options file. For example, you may need to update the `<additional-query>` specifying that only docs in the `data` collection are returned.  There may be a Data Hub specific collections that are a natural fit to limit the search results for your Grove application.  For example, 
+    ```xml
+    <cts:collection-query>
+      <cts:uri>Entity1</cts:uri>
+      <cts:uri>Entity2</cts:uri>
+       .....
+    </cts:collection-query>
+    ```
 
 10. Run `./gradlew mlLoadModules` from inside the `data-hub` directory. This command will deploy the new modules and supporting documents.  
 
@@ -102,24 +118,24 @@ Prerequisite: MarkLogic Data Hub has been deployed to your MarkLogic host.
 
 ## Alternative Approach to Run Grove with the Data Hub
 
-In order to run a Grove UI project alongside the MarkLogic Data Hub Framework (DHF) project, we alternatively suggest creating a Grove project-specific app-server, which has its own modules database but points at the content database with the data you wish to visualize: most often the DHF project's FINAL database. The DHF project will be responsible for managing the content database (including setting up indexes - needed for facets - and security permissions), as well as the content database's related triggers and schemas databases, while the Grove project will manage the Grove project's specific app-server and modules database.
+In order to run a Grove UI project alongside the MarkLogic Data Hub project, we alternatively suggest creating a Grove project-specific app-server, which has its own modules database but points at the content database with the data you wish to visualize: most often the Data Hub project's FINAL database. The Data Hub project will be responsible for managing the content database (including setting up indexes - needed for facets - and security permissions), as well as the content database's related triggers and schemas databases, while the Grove project will manage the Grove project's specific app-server and modules database.  Security will be a shared responsibility, where the Data Hub has to give low-level access to data, and Grove can arrange higher-level access.
 
-Note that this implies some coordination between the DHF project and Grove. If possible, it is easiest to manage both projects within the same code repository. The Grove files should all be within a dedicated parent directory. (For example, `grove/ui`, `grove/middle-tier`, and `grove/marklogic`. Note that there is nothing magic about the `grove` directory name, so call it whatever you want.)
+Note that this implies some coordination between the Data Hub project and Grove. If possible, it is easiest to manage both projects within the same code repository. The Grove files should all be within a dedicated parent directory. (For example, `grove/ui`, `grove/middle-tier`, and `grove/marklogic`. Note that there is nothing magic about the `grove` directory name, so call it whatever you want.)
 
-If you need more independence than that provided by this approach, you may consider replicating the DHF data to a Grove-specific content database - but that is currently beyond the scope of this guide.
+If you need more independence than that provided by this approach, you may consider replicating the Data Hub data to a Grove-specific content database - but that is currently beyond the scope of this guide.
 
 You can accomplish this approach by making some changes inside the `marklogic` directory of your Grove project. Grove projects generated using the grove-cli's `grove new` command ship with this `marklogic` directory, which contains configuration files for a standalone MarkLogic database, optimized for Grove's sample data set.
 
 The advantages to this approach include:
 
-- It does not pollute the DHF project's modules database.
-- It creates a line between configuration to support the Data Hub project and configuration to support the Grove UI project (with some exceptions, described in the next section on downsides). For example, the Grove project can set up its own users, roles, and security permissions (though those roles need to be consistent with doc permissions set in DHF).
+- It does not pollute the Data Hub project's modules database.
+- It creates a line between configuration to support the Data Hub project and configuration to support the Grove UI project (with some exceptions, described in the next section on downsides). For example, the Grove project can set up its own users, roles, and security permissions (though those roles need to be consistent with doc permissions set in Data Hub).
 
 There are some downsides to this approach:
 
-- You will have two different ml-gradle installations, one for the Grove project and one for the DHF project, which can be confusing and time-consuming, because you have to run gradle tasks in two places, for example when bootstrapping the project. You could mitigate this by creating scripts that automatically run gradle scripts in both places.
-- You will have to add some configuration to the DHF project in order to support the Grove UI. For example, the DHF project may need to add new indexes in order to support facets for the Grove UI. Content permissions will need to correspond to Grove users and roles. And if triggers and schemas are desired for the Grove project, those will have to be set up in the DHF ml-gradle configuration. (Note that this kind of demand will come from any downstream system connecting to a DHF content database.)
-- Any CRUD operations performed by the Grove project will write to the DHF project's content database.
+- You will have two different ml-gradle installations, one for the Grove project and one for the Data Hub project, which can be confusing and time-consuming, because you have to run gradle tasks in two places, for example when bootstrapping the project. You could mitigate this by creating scripts that automatically run gradle scripts in both places.
+- You will have to add some configuration to the Data Hub project in order to support the Grove UI. For example, the Data Hub project may need to add new indexes in order to support facets for the Grove UI. Content permissions will need to correspond to Grove users and roles. And if triggers and schemas are desired for the Grove project, those will have to be set up in the Data Hub ml-gradle configuration. (Note that this kind of demand will come from any downstream system connecting to a Data Hub content database.)
+- Any CRUD operations performed by the Grove project will write to the Data Hub project's content database.
 
 ### How to implement the alternative approach, step-by-step:
 
@@ -145,5 +161,11 @@ There are some downsides to this approach:
 
 5. Make any other necessary changes to the search options file. For example, you may need to remove the `<additional-query>` specifying that only docs in the `data` collection are returned.
 
-6. Run `./gradlew mlDeploy` from inside the `marklogic` directory. This command will deploy the new configuration, but it will not change the DHF project's content database, because you have removed all related configuration files.
+6. Remove vestiges of the permissions being set on the now OBE schemas database.
+  * Remove the entire `setSchemaPermissions` task beginning on line 42
+  * Remove line 56: `mlLoadSchemas.finalizedBy setSchemasPermissions`
+  * Remove line 58: `mlDeploy.finalizedBy setSchemasPermissions`
+
+
+7. Run `./gradlew mlDeploy` from inside the `marklogic` directory. This command will deploy the new configuration, but it will not change the Data Hub project's content database, because you have removed all related configuration files.
 
