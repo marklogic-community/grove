@@ -50,11 +50,7 @@ Prerequisite: MarkLogic Data Hub has been deployed to your MarkLogic host.
     mlModulePaths=src/main/ml-modules,src/main/ui-modules
     ```
 
-<<<<<<< Updated upstream
-5. __Only necessary for Data Hub 5.0.1__ Update the Data Hub's `build.gradle` to use a newer version of ml-gradle.  Add the `dependencies` to the `buildscript` object around line 5: 
-=======
 5. If you are using a version of the Data Hub older than 5.0.1, update the Data Hub's `build.gradle` to use a newer version of ml-gradle (3.14.0 or higher).  Add the `dependencies` to the `buildscript` object around line 5: 
->>>>>>> Stashed changes
 
     ```JSON
     dependencies {
