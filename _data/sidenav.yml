@@ -6,6 +6,7 @@ main:
     text: 'Guides',
     childPages: [
       { url: '/guides/getting-started/', text: 'Getting Started' },
+      { url: '/guides/data-hub-framework/', text: 'Grove and the Data Hub' },
       { url: '/guides/react/', text: 'React UI' , 
         childPages: [
           { url: '/guides/react/recipes/detail', text: 'Customize the Detail Page' },  
@@ -15,7 +16,6 @@ main:
           { url: '/guides/react/additional-components', text: 'Additional components' }    
         ]
       }
-      # { url: '/guides/data-hub-framework', text: 'Grove and DHF' }
     ]
     }
   # - {
