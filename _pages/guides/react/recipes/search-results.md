@@ -19,19 +19,20 @@ You can override the presentation of SearchResults by passing a custom resultCom
 
 Providing a `resultComponent` suppresses the out-of-the-box choice between components in the UI, which is primarily intended to showcase some possibilities. Once you provide your `resultComponent`, Search results will simply be rendered using the provided `resultComponent`.
 
-Note that you can also provide `resultComponent` to the higher-level `<SearchView/>` and the grove-core-react-redux-container library's `<SearchContainer/>`, which are both parents of `<SearchResults/>` and it will be passed down.
+Note that you can also provide `resultComponent` to the higher-level `<SearchView/>` and the container library's `<SearchContainer/>`, which are both parents of `<SearchResults/>` and it will be passed down.
 
 You can use the `<CardResult/>` in this library as a starting point for your custom component, if you wish. It accepts `content` and `header` component props to make it easier to change just those parts of the card. Let's see an example of how to do this. Create your new component by copying this code into a file named for the component at `ui/src/components/CustomSearchResult.js`:
 
 ```javascript
 import React from 'react';
-import { CardResult, SearchView, SearchSnippet} from 'grove-core-react-components';
+import CardResult from './views/search/SearchResults/CardResult';
+import SearchSnippet from './views/search/SearchResults/SearchSnippet';
 
 const CustomSearchResultContent = props => {
   return (
     <div>
       <p>You got a result!</p>
-      // Below, we are copying the card from the CardResult that shows snippets
+      {/* Below, we are copying the card from the CardResult that shows snippets */}
       <div className="ml-search-result-matches">
         {
           props.result.matches &&
@@ -74,18 +75,6 @@ Then, look for the `<Route/>` that renders the `<SearchContainer/>` and pass you
   path="/"
   render={() => <SearchContainer resultComponent={CustomSearchResult} />}
 />
-```
-
-## Customizing display when no results are found
-
-You can also override the component displayed when no results are found, by passing in a component as a `noResults` prop. This will work if you pass the `noResults` prop to the `<SearchContainer/>` as above as well, though this example shows it being passed directly to the `<SearchResults/>` component.
-
-```javascript
-const customNoResults =  () => (
-  <p>Truly, there are no results.</p>
-)
-
-<SearchResults noResults={customNoResults} />
 ```
 
 ## Adding Data from Result Documents to the Search Results
