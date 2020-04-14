@@ -34,8 +34,8 @@ This recipe starts with the basic steps to get it done, for the busy. Then, ther
 
     You will almost certainly want to build this template component up iteratively, so once you have a placeholder, jump to step 2 to install it.
 
-    For inspiration or a starting-point, you can [look at the implementation of the default template here](https://project.marklogic.com/repo/projects/NACW/repos/muir-core-react-components/browse/src/DetailView/DetailView.js#7-29).
-
+    For inspiration or a starting-point, you can [look at the implementation of the default template here](https://github.com/marklogic-community/grove-react-ui/blob/2c33e87d9c72882bfd5bd1801ff95dfb127fb8bc/src/components/views/detail/DetailView.js#L7).
+    
     When creating your component, you have the full power of the React framework and ecosystem. [Please learn about React, if you haven't already.](https://reactjs.org/docs/hello-world.html)
 
 2. **Pass your template to the DetailContainer.**
@@ -57,10 +57,10 @@ This recipe starts with the basic steps to get it done, for the busy. Then, ther
 
 ## Why this works
 
-The [`<DetailView/>` component provided by grove-core-react-components](https://project.marklogic.com/repo/projects/NACW/repos/muir-core-react-components/browse/src/DetailView/DetailView.js) accepts a template prop that will override the default template when a document is successfully retrieved. It gets passed all the props that `<DetailView/>` itself received. Typically, you will write a React component to render those props as desired. It can then be passed to `<DetailView/>` like so:
+The [`<DetailView/>` component](https://github.com/marklogic-community/grove-react-ui/blob/2c33e87d9c72882bfd5bd1801ff95dfb127fb8bc/src/components/views/detail/DetailView.js) accepts a template prop that will override the default template when a document is successfully retrieved. It gets passed all the props that `<DetailView/>` itself received. Typically, you will write a React component to render those props as desired. It can then be passed to `<DetailView/>` like so:
 
 ```javascript
 <DetailView template={myCustomDetailComponent} />
 ```
 
-In out-of-the-box Grove projects based on the grove-react-template, `<DetailView/>` is the top-level 'dumb' component being wrapped by a 'smart' Redux container, `<DetailContainer/>`. [`<DetailContainer/>`](https://project.marklogic.com/repo/users/pmcelwee/repos/muir-core-react-redux-containers/browse/src/containers/DetailContainer.js) passes along the template prop to the `<DetailView/>`.
+In out-of-the-box Grove projects based on the grove-react-template, `<DetailView/>` is the top-level 'dumb' component being wrapped by a 'smart' Redux container, `<DetailContainer/>`. [`<DetailContainer/>`](https://github.com/marklogic-community/grove-react-ui/blob/2c33e87d9c72882bfd5bd1801ff95dfb127fb8bc/src/containers/DetailContainer.js) passes along the template prop to the `<DetailView/>`.

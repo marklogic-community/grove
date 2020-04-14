@@ -5,11 +5,11 @@ lead_text: ''
 permalink: /guides/react/recipes/header-image
 ---
 
-# Add an image to the top Navbar
+# Add an image to the top Header
 
-You may prefer to have an image in the top left corner of the navigation bar.  Grove's MLNavbar component was designed with this in mind and can be customized with a prop (or two if you'd like to style the image, too).
+You may prefer to have an image in the top left corner of the header navigation bar.  Grove's Navbar component was designed with this in mind and can be customized with a prop (or two if you'd like to style the image, too).
 
-1. **Open `ui/src/components/Navbar.js`**.  A custom Navbar component that renders Grove's MLNavbar component, with links to "Search" and "Create" was provided as part of the starter Grove project.
+1. **Open `ui/src/components/Header.js`**.  A custom Header component that renders Grove's Navbar component, with links to "Search" and "Create" was provided as part of the starter Grove project.
 
 2. **Copy the image you want to display in the Navbar to `ui/src/components`**. For this example, `Logo.png` was copied into this directory.
 
@@ -19,10 +19,10 @@ You may prefer to have an image in the top left corner of the navigation bar.  G
       import myLogo from './Logo.png';
     ```
 
-4. **Pass the image as a prop to MLNavbar**.  Add the `logo` prop, with `myLogo` as the value, to the MLNavbar child component.
+4. **Pass the image as a prop to Navbar**.  Add the `logo` prop, with `myLogo` as the value, to the Navbar child component.
 
     ```javascript
-      <MLNavbar
+      <Navbar
         {...props}
         brandLink={brandLink}
         logo={mlLogo}
@@ -33,7 +33,7 @@ You may prefer to have an image in the top left corner of the navigation bar.  G
 5.  **(Optional) Style the image with an inline style**  The MLNavbar component also accepts a `logoStyle` prop.  This prop allows you to pass down an inline style object to assist with tasks such as sizing or positioning the image.  You may need to customize the styling to suit your needs and properly fit the image.  Note that a React inline style object uses camelCased properties rather than a CSS string.  The following is a simple example that restricts the size of the image and moves it slightly to align it better with the navigation options.
 
     ```javascript
-      <MLNavbar
+      <Navbar
         {...props}
         brandLink={brandLink}
         logo={mlLogo}

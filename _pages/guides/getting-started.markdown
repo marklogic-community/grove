@@ -13,15 +13,15 @@ The commands listed below should be typed into a terminal/console window.
 
 ## 1. Check Prerequisites
 
-  - **MarkLogic**: If you have not yet done so, [install MarkLogic 9](https://developer.marklogic.com/products), start it, and initialize it at `localhost:8001`.
-  - **Node.js**: Check if you have Node.js version 8.10.0 or above installed by running `node -v`. If not, [install Node.js](https://nodejs.org/).
-  - **npm**: Check if you have npm version 5.7.0 or above installed by running `npm -v`. If not, run `npm install -g npm` to get the latest.
+  - **MarkLogic**: If you have not yet done so, [install MarkLogic 9 or 10](https://developer.marklogic.com/products), start it, and initialize it at `localhost:8001`.
+  - **Node.js**: Check if you have Node.js version 10.16.0 or above installed by running `node -v`. If not, [install Node.js](https://nodejs.org/).
+  - **npm**: Check if you have npm version 6.9.0 or above installed by running `npm -v`. If not, run `npm install -g npm` to get the latest.
   - **Git**: The grove-cli requires git. Check if you have git installed by running `git --version`. If not, [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
   - **Java**: (If you are an advanced user and know that you do not plan to use the included ml-gradle deployer, you can skip the Java requirement.) Check if you have Java 1.8 or above installed by running `java -version`. If not, [install Java 1.8](https://www.java.com/en/download/help/download_options.xml). Java is required because the generated Grove project will use [ml-gradle](https://github.com/marklogic-community/ml-gradle) to administer MarkLogic and [mlcp](https://developer.marklogic.com/products/mlcp) to load data.
 
 ## 2. Install the grove-cli
 
-The [grove-cli](https://project.marklogic.com/repo/users/pmcelwee/repos/grove-cli/browse) is the best way to install and configure new Grove Projects. Run the following to install the grove-cli:
+The [grove-cli](https://github.com/marklogic-community/grove-cli) is the best way to install and configure new Grove Projects. Run the following to install the grove-cli:
 
 ```bash
 npm install -g @marklogic-community/grove-cli
