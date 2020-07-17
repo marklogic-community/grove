@@ -34,36 +34,34 @@ There are some disadvantages to this approach:
 Prerequisite: MarkLogic Data Hub has been deployed to your MarkLogic host.  
 
 [Optional] If you previously installed Grove to its default database via the `mlDeploy` command within the `marklogic` directory, remove the Grove-specific configs before proceeding:
-        
+
+
     > cd grove/marklogic
     > ./gradlew mlUndeploy -Pconfirm=true
-    
 
 ### Steps to move Grove modules to the Data Hub
 
 1. Determine the MarkLogic host and port the data-hub-FINAL app server is running on.
 2. At the command line, from within the top level of your Grove project, (the directory with `middle-tier` and `ui` directories inside it), run `grove config` and enter the host and port of the data-hub-FINAL app server.  This will update environment variables for your project.
 3. Create the `ui-modules` directory inside the Data Hub project: `data-hub/src/main/ui-modules`.
-4. Update the Data Hub's `gradle.properties` to register this new location for MarkLogic module deployments.  Add the following line to `gradle.properes`:
+4. Update the Data Hub's `gradle.properties` to register this new location for MarkLogic module deployments and UI-related data.  Add the following line to `gradle.properties`:
 
     ```
     mlModulePaths=src/main/ml-modules,src/main/ui-modules
+    mlDataPaths=src/main/ml-data,src/main/ui-data
     ```
 
-5. If you are using a version of the Data Hub older than 5.0.1, update the Data Hub's `build.gradle` to use a newer version of ml-gradle (3.14.0 or higher).  Add the `dependencies` to the `buildscript` object around line 5: 
+5. If you are using a version of the Data Hub _older than 5.0.1_, update the Data Hub's `build.gradle` to use a newer ml-gradle, version 3.14.0 or higher.  4.0.4 is used in this example as it is the most recent at time of writing.  Add the `dependencies` to the `buildscript` object around line 5: 
 
     ```JSON
     dependencies {
-		  classpath "gradle.plugin.com.marklogic:ml-gradle:3.14.0"
+		  classpath "gradle.plugin.com.marklogic:ml-gradle:4.0.4"
     }
     ```
 
 6. Copy the contents of the Grove modules to the Data Hub project. Copy 
     ```
-    grove/marklogic/ml-modules/options
-    grove/marklogic/ml-modules/root 
-    grove/marklogic/ml-modules/services
-    grove/marklogic/ml-modules/transforms
+    grove/marklogic/src/main/ui-modules
     
     to 
     
@@ -72,19 +70,14 @@ Prerequisite: MarkLogic Data Hub has been deployed to your MarkLogic host.
 
 7. Copy the contents of the Grove default user profile and a dictionary document to the Data Hub project. Copy the files in 
     ```
-    grove/marklogic/ml-content
+    grove/marklogic/src/main/ui-data
     
     to 
     
     data-hub/src/main/ui-data
     ```
 
-To ensure the deployment process deploys these files, also add the folllowing line to your `gradle.properies` file:
-  
-    mlDataPaths=src/main/ml-data,src/main/ui-data
-
-
-8. Edit the query options used by your Grove middle-tier's search route (by default, these query options are called `all` and are found in the `data-hub/ui-modules/options/all.xml` file) to remove the following blocks:
+8. Edit the query options used by your Grove middle-tier's search route (by default, these query options are called `all` and are found in the `data-hub/src/main/ui-modules/options/all.xml` file) to remove the following blocks:
 
     ```xml
     <constraint name="eyecolor">
@@ -137,11 +130,11 @@ There are some downsides to this approach:
 
 1. Run `grove config` at the top-level of your Grove project to ensure that, for example, an available port is specified.
 
-2. Delete `content-database.json`, `schemas-database.json`, and `triggers-database.json` from `marklogic/ml-config/databases/`.
+2. Delete `content-database.json`, `schemas-database.json`, and `triggers-database.json` from `marklogic/src/main/ml-config/databases/`.
 
-3. Edit `marklogic/ml-config/servers/app-server` and `marklogic/ml-config/rest-api.json` to point to the correct content-database name.
+3. Edit `marklogic/src/main/ml-config/servers/app-server` and `marklogic/src/main/ml-config/rest-api.json` to point to the correct content-database name.
 
-4. Edit the search options used by your Grove middle-tier's search route (by default, these search options are called `all` and are found in the `marklogic/ml-modules/options/all.xml` file) to remove the following blocks:
+4. Edit the search options used by your Grove middle-tier's search route (by default, these search options are called `all` and are found in the `marklogic/src/main/ml-modules/options/all.xml` file) to remove the following blocks:
 
     ```xml
     <constraint name="eyecolor">
@@ -157,11 +150,5 @@ There are some downsides to this approach:
 
 5. Make any other necessary changes to the search options file. For example, you may need to remove the `<additional-query>` specifying that only docs in the `data` collection are returned.
 
-6. Remove vestiges of the permissions being set on the now OBE schemas database.
-  * Remove the entire `setSchemaPermissions` task beginning on line 42
-  * Remove line 56: `mlLoadSchemas.finalizedBy setSchemasPermissions`
-  * Remove line 58: `mlDeploy.finalizedBy setSchemasPermissions`
-
-
-7. Run `./gradlew mlDeploy` from inside the `marklogic` directory. This command will deploy the new configuration, but it will not change the Data Hub project's content database, because you have removed all related configuration files.
+6. Run `./gradlew mlDeploy` from inside the `marklogic` directory. This command will deploy the new configuration, but it will not change the Data Hub project's content database, because you have removed all related configuration files.
 
