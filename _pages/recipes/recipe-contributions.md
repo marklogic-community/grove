@@ -112,10 +112,10 @@ from the main (upstream) repository:
     git push origin --delete my-feature-branch
     ```
 
-* Check out the develop branch:
+* Check out the docs branch:
 
     ```shell
-    git checkout develop -f
+    git checkout docs -f
     ```
 
 * Delete the local branch:
@@ -124,8 +124,8 @@ from the main (upstream) repository:
     git branch -D my-feature-branch
     ```
 
-* Update your develop with the latest upstream version:
+* Update your docs with the latest upstream version:
 
     ```shell
-    git pull --ff upstream develop
+    git pull --ff upstream docs
     ```
