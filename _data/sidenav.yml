@@ -18,6 +18,12 @@ main:
       }
     ]
     }
+  - {
+    text: 'Recipes',
+    childPages: [
+      { url: '/recipes/recipe-contributions/', text: 'Add your recipe!' }
+    ]
+  }
   # - {
   #   url: '/docs/',
   #   text: 'Docs',
