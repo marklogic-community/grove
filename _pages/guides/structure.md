@@ -2,7 +2,7 @@
 layout: inner
 title: Structure of Grove Projects
 lead_text: ''
-permalink: /
+permalink: /guides/structure/
 ---
 
 # The Structure of a Grove Project
