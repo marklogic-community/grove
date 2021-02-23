@@ -22,7 +22,7 @@ You may get errors in your code editor when opening React files if it does not h
 The Grove React flavor can be customized to suit the needs of your application.  Follow these
 recipes to make Grove your own.
 
-* [Detail Page]({% link _pages/guides/react/recipes/detail.md %})
+* [Detail Page](/grove{% link _pages/guides/react/recipes/detail.md %})
 * [Search Results]({% link _pages/guides/react/recipes/search-results.md %})
 * [Header Image]({% link _pages/guides/react/recipes/header-image.md %})
 * [Styles]({% link _pages/guides/react/recipes/styles.md %})
