@@ -1,0 +1,410 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html itemscope itemtype="http://schema.org/Organization" id="ie6" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 7 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie7" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 8 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie8" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 9 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie9" class="ie" lang="en-US"><![endif]-->
+<!--[if gt IE 9]><!--><html itemscope itemtype="http://schema.org/Organization" lang="en-US"><!--<![endif]-->
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>Grove Recipe Contributions - Grove Documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Favicons -->
+    <!--link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64 96x96" href="/grove/favicon.ico"-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/grove/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/grove/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/grove/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/grove/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/grove/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/grove/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/grove/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="application-name" content="Grove Documentation - Grove, a toolkit full of tooling, templates, and other resources that help with building UI applications on top of MarkLogic.">
+
+    <!--script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-6638631-15', 'auto');
+      ga('send', 'pageview');
+
+    </script-->
+
+    <!-- Facebook Pixel Code -->
+    <!--script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1879746318909687'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1879746318909687&ev=PageView&noscript=1"
+    /></noscript-->
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+    <link type="text/css" rel="stylesheet" href="/grove/assets/bundle.css">
+</head>
+<body class="">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/grove/">
+                  <span class="logo">
+                    <img src="/grove/images/logo-marklogic.svg" width="180px" height="38px" alt="MarkLogic" title="MarkLogic" scale="0">
+                  </span>
+                  Grove Documentation
+                  <img style="filter: invert(61%);" src="/grove/images/grove-favicon.svg" width="36x" height="36px">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                        <li  >
+                            
+                            <a href="/grove/">About Grove</a>
+                            
+                        </li>
+                    
+                        <li  >
+                            
+                            <a href="https://github.com/marklogic-community/grove">GitHub</a>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="side-nav col-md-3 hide-small">
+          <div class="panel panel-default">
+  <div class="panel-heading">Navigation</div>
+  <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/">About Grove</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/how-does-it-work/">How does it work?</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="">Guides</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/structure/">Structure of Grove Projects</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/getting-started/">Getting Started</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react-vs-vue/">React vs. Vue</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/data-hub-framework/">Grove and the Data Hub</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/">React UI</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/detail">Customize the Detail Page</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/search-results">Customize the Search Results</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/header-image">Customize the Header Image</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/styles">Customize the Styles</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/additional-components">Additional components</a>
+    
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="">Recipes</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item active"  >
+    
+    <a href="/grove/recipes/recipe-contributions/">Add your recipe!</a>
+    
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/faqs/">FAQs</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="https://github.com/marklogic-community/grove">Grove on GitHub</a>
+    
+    
+  </li>
+  
+</ul>
+
+</div>
+
+        </div>
+        <div class="col-md-9">
+          <h1 id="grove-welcomes-recipe-contributions">Grove welcomes recipe contributions</h1>
+
+<p>Have you done something you’re happy with, or something that’s highly reusable that others could benefit from?
+Please submit it for inclusion in these docs!</p>
+
+<p>These docs are mainly written in Markdown, with a bit of additional markup and configuration required so it will
+be displayed properly and link-able.  The steps are very straightforward and detailed below.</p>
+
+<h2 id="how-to">How-To</h2>
+
+<p>To add a page into the Recipes section, first open <code class="highlighter-rouge">_data/sidenav.yml</code>.</p>
+
+<p>Add a new value to the <code class="highlighter-rouge">childPages</code> array of the JSON object with a value of <code class="highlighter-rouge">text:Recipes</code>.  For example,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  { url: '/recipes/awesome-feature/', text: 'My awesome feature' }
+</code></pre></div></div>
+
+<p>can be added to the array:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- {
+  text: 'Recipes',
+  childPages: [
+    { url: '/recipes/recipe-contributions/', text: 'Add your recipe!' },
+    { url: '/recipes/awesome-feature/', text: 'My awesome feature' }
+  ]
+}
+</code></pre></div></div>
+
+<p>Next, create the empty file <code class="highlighter-rouge">_pages/recipes/awesome-feature.md</code>.  The filename should match the <code class="highlighter-rouge">url</code> you defined.</p>
+
+<p>Lastly, in the markdown file you just created, add the following to the top of the file:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ---
+    layout: inner
+    title: Marianne's Awesome Recipe
+    lead_text: ''
+    permalink: /recipes/awesome-recipe/
+    ---
+</code></pre></div></div>
+
+<p>Ensure you update the <code class="highlighter-rouge">title</code> to something meaningful.  The <code class="highlighter-rouge">permalink</code> must match the <code class="highlighter-rouge">url</code> you previously defined.</p>
+
+<p>Everything after the second <code class="highlighter-rouge">---</code> should be written in Markdown.  Feel free to take a look at some of the samples 
+in the <a href="/guides/react">React Guide</a> for inspiration.</p>
+
+<h2 id="submitting-a-pull-request">Submitting a Pull Request</h2>
+
+<p>In case you need a referesher on Forking projects on GitHub, we’ve got you covered.</p>
+
+<h3 id="fork-grove">Fork Grove</h3>
+
+<p>Fork the project <a href="https://github.com/marklogic-community/grove/fork">on GitHub</a> and clone your copy.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:username/grove.git
+<span class="nb">cd </span>grove
+git remote add upstream git://github.com/marklogic-community/grove.git
+</code></pre></div></div>
+
+<p>All documentation changes go into the docs branch.</p>
+
+<h3 id="create-a-branch-for-your-changes">Create a branch for your changes</h3>
+
+<p>Okay, so you have decided to add some docs. Create a feature branch
+and start hacking:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> my-feature-branch <span class="nt">-t</span> origin/docs
+</code></pre></div></div>
+
+<h3 id="rebase-your-repo">Rebase your repo</h3>
+
+<p>Use <code class="highlighter-rouge">git rebase</code> (not <code class="highlighter-rouge">git merge</code>) to sync your work from time to time.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch upstream
+git rebase upstream/docs
+</code></pre></div></div>
+
+<h3 id="push-your-changes">Push your changes</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin my-feature-branch
+</code></pre></div></div>
+
+<h3 id="submit-the-pull-request">Submit the pull request</h3>
+
+<p>Go to https://github.com/username/grove and select your feature 
+branch. Click the ‘Pull Request’ button and fill out the form.</p>
+
+<p>Pull requests are usually reviewed within a few days. If you get comments
+that need to be to addressed, apply your changes in a separate commit and push 
+that to your feature branch. Post a comment in the pull request afterwards; 
+GitHub does not send out notifications when you add commits to existing pull 
+requests.</p>
+
+<p>That’s it! Thank you for your contribution!</p>
+
+<h3 id="after-your-pull-request-is-merged">After your pull request is merged</h3>
+
+<p>After your pull request is merged, you can safely delete your branch and pull the changes
+from the main (upstream) repository:</p>
+
+<ul>
+  <li>
+    <p>Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git push origin <span class="nt">--delete</span> my-feature-branch
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Check out the docs branch:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git checkout docs <span class="nt">-f</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Delete the local branch:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git branch <span class="nt">-D</span> my-feature-branch
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Update your docs with the latest upstream version:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git pull <span class="nt">--ff</span> upstream docs
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                    Copyright © 2016-2021 MarkLogic Corporation. All Rights Reserved. MARKLOGIC® is a registered trademark of MarkLogic Corporation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="/grove/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="/grove/assets/bundle.js" id="1"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79716597-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,401 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html itemscope itemtype="http://schema.org/Organization" id="ie6" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 7 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie7" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 8 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie8" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 9 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie9" class="ie" lang="en-US"><![endif]-->
+<!--[if gt IE 9]><!--><html itemscope itemtype="http://schema.org/Organization" lang="en-US"><!--<![endif]-->
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>Grove React - Customize the Search Results - Grove Documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Favicons -->
+    <!--link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64 96x96" href="/grove/favicon.ico"-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/grove/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/grove/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/grove/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/grove/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/grove/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/grove/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/grove/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="application-name" content="Grove Documentation - Grove, a toolkit full of tooling, templates, and other resources that help with building UI applications on top of MarkLogic.">
+
+    <!--script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-6638631-15', 'auto');
+      ga('send', 'pageview');
+
+    </script-->
+
+    <!-- Facebook Pixel Code -->
+    <!--script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1879746318909687'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1879746318909687&ev=PageView&noscript=1"
+    /></noscript-->
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+    <link type="text/css" rel="stylesheet" href="/grove/assets/bundle.css">
+</head>
+<body class="">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/grove/">
+                  <span class="logo">
+                    <img src="/grove/images/logo-marklogic.svg" width="180px" height="38px" alt="MarkLogic" title="MarkLogic" scale="0">
+                  </span>
+                  Grove Documentation
+                  <img style="filter: invert(61%);" src="/grove/images/grove-favicon.svg" width="36x" height="36px">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                        <li  >
+                            
+                            <a href="/grove/">About Grove</a>
+                            
+                        </li>
+                    
+                        <li  >
+                            
+                            <a href="https://github.com/marklogic-community/grove">GitHub</a>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="side-nav col-md-3 hide-small">
+          <div class="panel panel-default">
+  <div class="panel-heading">Navigation</div>
+  <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/">About Grove</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/how-does-it-work/">How does it work?</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="">Guides</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/structure/">Structure of Grove Projects</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/getting-started/">Getting Started</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react-vs-vue/">React vs. Vue</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/data-hub-framework/">Grove and the Data Hub</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/">React UI</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/detail">Customize the Detail Page</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item active"  >
+    
+    <a href="/grove/guides/react/recipes/search-results">Customize the Search Results</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/header-image">Customize the Header Image</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/styles">Customize the Styles</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/additional-components">Additional components</a>
+    
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="">Recipes</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/recipes/recipe-contributions/">Add your recipe!</a>
+    
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/faqs/">FAQs</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="https://github.com/marklogic-community/grove">Grove on GitHub</a>
+    
+    
+  </li>
+  
+</ul>
+
+</div>
+
+        </div>
+        <div class="col-md-9">
+          <h1 id="customizing-searchresults">Customizing SearchResults</h1>
+
+<p>The default behavior of the SearchResults component is to offer a choice between a CardResult and a ListResult. In the first subsection below, you will find instructions to change the presentation of a search result in the UI. In the second subsection, there are instructions for a common use case: configuring the middle-tier to extract data from a result document (stored in MarkLogic) and pass it along as part of the search result, so that it can be displayed on the search result in the UI.</p>
+
+<h2 id="change-the-display-of-search-results">Change the Display of Search Results</h2>
+
+<p>You can override the presentation of SearchResults by passing a custom resultComponent prop to <code class="highlighter-rouge">&lt;SearchResults/&gt;</code>. Your component will receive a result prop and a detailPath.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">SearchResults</span> <span class="nx">resultComponent</span><span class="o">=</span><span class="p">{</span><span class="nx">myCustomSearchResult</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>Providing a <code class="highlighter-rouge">resultComponent</code> suppresses the out-of-the-box choice between components in the UI, which is primarily intended to showcase some possibilities. Once you provide your <code class="highlighter-rouge">resultComponent</code>, Search results will simply be rendered using the provided <code class="highlighter-rouge">resultComponent</code>.</p>
+
+<p>Note that you can also provide <code class="highlighter-rouge">resultComponent</code> to the higher-level <code class="highlighter-rouge">&lt;SearchView/&gt;</code> and the container library’s <code class="highlighter-rouge">&lt;SearchContainer/&gt;</code>, which are both parents of <code class="highlighter-rouge">&lt;SearchResults/&gt;</code> and it will be passed down.</p>
+
+<p>You can use the <code class="highlighter-rouge">&lt;CardResult/&gt;</code> in this library as a starting point for your custom component, if you wish. It accepts <code class="highlighter-rouge">content</code> and <code class="highlighter-rouge">header</code> component props to make it easier to change just those parts of the card. Let’s see an example of how to do this. Create your new component by copying this code into a file named for the component at <code class="highlighter-rouge">ui/src/components/CustomSearchResult.js</code>:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">CardResult</span> <span class="k">from</span> <span class="s1">'./views/search/SearchResults/CardResult'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">SearchSnippet</span> <span class="k">from</span> <span class="s1">'./views/search/SearchResults/SearchSnippet'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">CustomSearchResultContent</span> <span class="o">=</span> <span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">You</span> <span class="nx">got</span> <span class="nx">a</span> <span class="nx">result</span><span class="o">!&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>      <span class="p">{</span><span class="cm">/* Below, we are copying the card from the CardResult that shows snippets */</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"ml-search-result-matches"</span><span class="o">&gt;</span>
+        <span class="p">{</span>
+          <span class="nx">props</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">matches</span> <span class="o">&amp;&amp;</span>
+            <span class="nx">props</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">matches</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">match</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+              <span class="o">&lt;</span><span class="nx">SearchSnippet</span> <span class="nx">match</span><span class="o">=</span><span class="p">{</span><span class="nx">match</span><span class="p">}</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>            <span class="p">))</span>
+        <span class="p">}</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">CustomSearchResult</span> <span class="o">=</span> <span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// 1. Suppress the header, though you could change the header instead.</span>
+  <span class="c1">// 2. Add 'You got a result!' to each result content using the above component.</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">CardResult</span>
+      <span class="nx">result</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">result</span><span class="p">}</span>
+      <span class="nx">detailPath</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">detailPath</span><span class="p">}</span>
+      <span class="nx">header</span><span class="o">=</span><span class="p">{</span><span class="kc">null</span><span class="p">}</span>
+      <span class="nx">content</span><span class="o">=</span><span class="p">{</span><span class="nx">CustomSearchResultContent</span><span class="p">}</span>
+    <span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">CustomSearchResult</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Now, you can wire in your <code class="highlighter-rouge">CustomSearchResult</code>. Open up <code class="highlighter-rouge">ui/src/components/Routes.js</code>, which includes the <code class="highlighter-rouge">&lt;SearchContainer/&gt;</code>. First, import your component:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">CustomSearchResult</span> <span class="k">from</span> <span class="s1">'./CustomSearchResult'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Then, look for the <code class="highlighter-rouge">&lt;Route/&gt;</code> that renders the <code class="highlighter-rouge">&lt;SearchContainer/&gt;</code> and pass your <code class="highlighter-rouge">resultComponent</code> prop to it. The path, etc., may be different in your application. The key point is that you need to pass <code class="highlighter-rouge">resultComponent</code> to <code class="highlighter-rouge">&lt;SearchContainer/&gt;</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">Route</span>
+  <span class="nx">exact</span>
+  <span class="nx">path</span><span class="o">=</span><span class="s2">"/"</span>
+  <span class="nx">render</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">SearchContainer</span> <span class="nx">resultComponent</span><span class="o">=</span><span class="p">{</span><span class="nx">CustomSearchResult</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">}
+</span><span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="adding-data-from-result-documents-to-the-search-results">Adding Data from Result Documents to the Search Results</h2>
+
+<p><em>Note that this section assumes you are using the out-of-the-box “all”-typed search in the Grove middle-tier, which is closely tied to the MarkLogic Search API. Grove search endpoints can be configured so that you are searching across entities at a higher level of abstraction than documents or from sources other than MarkLogic, in which case, you may need to use some other technique to return the data you require.</em></p>
+
+<p>The search results that are returned from the Grove middle-tier by default are very similar to the results returned by the MarkLogic Search API. If you inspect the <code class="highlighter-rouge">result</code> prop passed to your custom search result component, you can see its structure. You can also inspect network traffic using your browser’s Javascript console to see the response to call to <code class="highlighter-rouge">/api/search</code>. There is a good amount of information in each search result, but it does not return the full contents of matched documents - for good reason! If it did, large documents could dramatically slow down your project.</p>
+
+<p>You can extract additional information from MarkLogic’s Search API by adding an <code class="highlighter-rouge">extract-document-data</code> search option in the saved search options referenced by <code class="highlighter-rouge">namedOptions</code> in your middle-tier configuration. See <a href="https://docs.marklogic.com/guide/search-dev/query-options#id_37692">“Extracting a Portion of Matching Documents”</a> for details. If you don’t know which namedOptions you are using:</p>
+
+<ol>
+  <li>
+    <p><strong>Open <code class="highlighter-rouge">middle-tier/routes/api/index.js</code>.</strong> This is where you typically install and configure endpoints in your Grove middle-tier. Each endpoint created here will be nested under an <code class="highlighter-rouge">/api</code> prefix.</p>
+  </li>
+  <li>
+    <p><strong>Find the search route whose results you want to add the additional information to.</strong> Out of the box, Grove includes a <code class="highlighter-rouge">/search/all</code> search endpoint, though it is possible to add additional typed search endpoints. Look for a section like this:</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">router</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+   <span class="s1">'/search/'</span> <span class="o">+</span> <span class="nx">type</span><span class="p">,</span> <span class="c1">// this endpoint route could be different, if your team has made changes</span>
+   <span class="nx">factory</span><span class="p">.</span><span class="nx">defaultSearchRoute</span><span class="p">({</span> <span class="c1">//</span>
+     <span class="c1">// other configuration</span>
+     <span class="na">namedOptions</span><span class="p">:</span> <span class="s1">'my-saved-search-options'</span>
+     <span class="c1">// ...</span>
+   <span class="p">})</span>
+ <span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Change your saved search options to extract the information you need.</strong> See MarkLogic’s documentation on <a href="https://docs.marklogic.com/guide/search-dev/query-options#id_37692">“Extracting a Portion of Matching Documents”</a> for details.</p>
+  </li>
+  <li>
+    <p><strong>Use the extracted information in your custom search results components.</strong> The extracted data will be inside <code class="highlighter-rouge">props.detail.result.extracted</code> in your component. You should inspect that object to see how to reference it inside your custom search results component. The code will looks something like:</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">const</span> <span class="nx">myCustomHeader</span> <span class="o">=</span> <span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">myLabel</span><span class="p">;</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">extracted</span><span class="p">)</span> <span class="p">{</span>
+     <span class="kd">const</span> <span class="nx">myLabelExtractObject</span> <span class="o">=</span> <span class="nx">props</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">extracted</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">extractContent</span> <span class="o">=&gt;</span> <span class="nx">extract</span><span class="p">.</span><span class="nx">myLabelExtractKey</span><span class="p">);</span>
+     <span class="k">if</span> <span class="p">(</span><span class="nx">myLabelExtractObject</span><span class="p">)</span> <span class="p">{</span> <span class="nx">myLabel</span> <span class="o">=</span> <span class="nx">myLabelExtractObject</span><span class="p">.</span><span class="nx">myLabelExtractKey</span><span class="p">;</span> <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="p">(</span>
+     <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">myLabel</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>   <span class="p">)</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>Though, note that you could also combine several extracts together.</p>
+  </li>
+</ol>
+
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                    Copyright © 2016-2021 MarkLogic Corporation. All Rights Reserved. MARKLOGIC® is a registered trademark of MarkLogic Corporation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="/grove/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="/grove/assets/bundle.js" id="1"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79716597-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+

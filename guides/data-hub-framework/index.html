@@ -1,0 +1,448 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html itemscope itemtype="http://schema.org/Organization" id="ie6" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 7 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie7" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 8 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie8" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 9 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie9" class="ie" lang="en-US"><![endif]-->
+<!--[if gt IE 9]><!--><html itemscope itemtype="http://schema.org/Organization" lang="en-US"><!--<![endif]-->
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>Grove and the Data Hub - Grove Documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Favicons -->
+    <!--link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64 96x96" href="/grove/favicon.ico"-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/grove/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/grove/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/grove/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/grove/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/grove/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/grove/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/grove/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="application-name" content="Grove Documentation - Grove, a toolkit full of tooling, templates, and other resources that help with building UI applications on top of MarkLogic.">
+
+    <!--script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-6638631-15', 'auto');
+      ga('send', 'pageview');
+
+    </script-->
+
+    <!-- Facebook Pixel Code -->
+    <!--script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1879746318909687'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1879746318909687&ev=PageView&noscript=1"
+    /></noscript-->
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+    <link type="text/css" rel="stylesheet" href="/grove/assets/bundle.css">
+</head>
+<body class="">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/grove/">
+                  <span class="logo">
+                    <img src="/grove/images/logo-marklogic.svg" width="180px" height="38px" alt="MarkLogic" title="MarkLogic" scale="0">
+                  </span>
+                  Grove Documentation
+                  <img style="filter: invert(61%);" src="/grove/images/grove-favicon.svg" width="36x" height="36px">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                        <li  >
+                            
+                            <a href="/grove/">About Grove</a>
+                            
+                        </li>
+                    
+                        <li  >
+                            
+                            <a href="https://github.com/marklogic-community/grove">GitHub</a>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="side-nav col-md-3 hide-small">
+          <div class="panel panel-default">
+  <div class="panel-heading">Navigation</div>
+  <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/">About Grove</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/how-does-it-work/">How does it work?</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="">Guides</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/structure/">Structure of Grove Projects</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/getting-started/">Getting Started</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react-vs-vue/">React vs. Vue</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item active"  >
+    
+    <a href="/grove/guides/data-hub-framework/">Grove and the Data Hub</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/">React UI</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/detail">Customize the Detail Page</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/search-results">Customize the Search Results</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/header-image">Customize the Header Image</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/styles">Customize the Styles</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/additional-components">Additional components</a>
+    
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="">Recipes</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/recipes/recipe-contributions/">Add your recipe!</a>
+    
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/faqs/">FAQs</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="https://github.com/marklogic-community/grove">Grove on GitHub</a>
+    
+    
+  </li>
+  
+</ul>
+
+</div>
+
+        </div>
+        <div class="col-md-9">
+          <h1 id="grove--marklogic-data-hub">Grove + MarkLogic Data Hub</h1>
+
+<p>We often want to run Grove as a UI working alongside a <a href="https://marklogic.github.io/marklogic-data-hub/">MarkLogic Data Hub</a>. This guide provides the mechanics on how to do this, and provides a choice of method.</p>
+
+<p>This guide has been vetted on both Data Hub 5.x and the Data Hub Framework 4.3.1.</p>
+
+<h2 id="migrating-grove-related-artifacts-and-code-to-the-data-hub">Migrating Grove-related artifacts and code to the Data Hub</h2>
+
+<p>In order to run a Grove UI project alongside a MarkLogic Data Hub, we recommend migrating Grove related artifacts and code from its code base into your Data Hub project.  This approach was tested against both the Data Hub and the Data Hub Service.</p>
+
+<p>Note that this implies some coordination between the Data Hub project and Grove even after migration of Grove’s core capabilities. If possible, it is easiest to manage both projects within the same code repository. The Grove files should all be within a dedicated parent directory. (For example, <code class="highlighter-rouge">grove/ui</code> and <code class="highlighter-rouge">grove/middle-tier</code>. Note that there is nothing magic about the <code class="highlighter-rouge">grove</code> directory name, so call it whatever you want.)</p>
+
+<p>You can accomplish this recommended approach by moving a subset of files from inside the <code class="highlighter-rouge">marklogic</code> directory of your Grove project into your Data Hub project. Grove projects generated using the grove-cli’s <code class="highlighter-rouge">grove new</code> command ship with this <code class="highlighter-rouge">marklogic</code> directory, which contains configuration files for a standalone MarkLogic database, optimized for Grove’s sample data set.  Once the relevant files are migrated, the <code class="highlighter-rouge">marklogic</code> directory can be deleted entirely.  Additionally, an environment variable will need to be updated to reflect the data-hub-FINAL HTTP app server as configured by the Data Hub project.</p>
+
+<p>The advantages of this approach include:</p>
+<ul>
+  <li>Combining the Grove-related artifacts with the Data Hub simplifies development and deployments.  The Grove code is logically separated inside its own directory under <code class="highlighter-rouge">data-hub/src/main/ui-modules</code> for clarity and distinction from Data Hub specific modules.</li>
+  <li>If code is maintained together in the same repository, consistent versioning can be ensured.</li>
+  <li>The Grove UI becomes a downstream consumer of the Data Hub.</li>
+</ul>
+
+<p>There are some disadvantages to this approach:</p>
+<ul>
+  <li>UI specific code will reside in close proximity to backend specific configurations.  This might not be as preferable to some development teams.</li>
+  <li>Any CRUD operations performed by the Grove project will write to the Data Hub’s FINAL database.</li>
+  <li>The security approach for Data Hub differs from that of Grove.  It is best to drop that direction and use MarkLogic’s guidance for the Data Hub.</li>
+</ul>
+
+<h3 id="how-to-implement-the-recommended-approach-step-by-step">How to implement the recommended approach, step-by-step:</h3>
+
+<p>Prerequisite: MarkLogic Data Hub has been deployed to your MarkLogic host.</p>
+
+<p>[Optional] If you previously installed Grove to its default database via the <code class="highlighter-rouge">mlDeploy</code> command within the <code class="highlighter-rouge">marklogic</code> directory, remove the Grove-specific configs before proceeding:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; cd grove/marklogic
+&gt; ./gradlew mlUndeploy -Pconfirm=true
+</code></pre></div></div>
+
+<h3 id="steps-to-move-grove-modules-to-the-data-hub">Steps to move Grove modules to the Data Hub</h3>
+
+<ol>
+  <li>Determine the MarkLogic host and port the data-hub-FINAL app server is running on.</li>
+  <li>At the command line, from within the top level of your Grove project, (the directory with <code class="highlighter-rouge">middle-tier</code> and <code class="highlighter-rouge">ui</code> directories inside it), run <code class="highlighter-rouge">grove config</code> and enter the host and port of the data-hub-FINAL app server.  This will update environment variables for your project.</li>
+  <li>Create the <code class="highlighter-rouge">ui-modules</code> directory inside the Data Hub project: <code class="highlighter-rouge">data-hub/src/main/ui-modules</code>.</li>
+  <li>
+    <p>Update the Data Hub’s <code class="highlighter-rouge">gradle.properties</code> to register this new location for MarkLogic module deployments and UI-related data.  Add the following line to <code class="highlighter-rouge">gradle.properties</code>:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mlModulePaths=src/main/ml-modules,src/main/ui-modules
+ mlDataPaths=src/main/ml-data,src/main/ui-data
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If you are using a version of the Data Hub <em>older than 5.0.1</em>, update the Data Hub’s <code class="highlighter-rouge">build.gradle</code> to use a newer ml-gradle, version 3.14.0 or higher.  4.0.4 is used in this example as it is the most recent at time of writing.  Add the <code class="highlighter-rouge">dependencies</code> to the <code class="highlighter-rouge">buildscript</code> object around line 5:</p>
+
+    <pre><code class="language-JSON"> dependencies {
+       classpath "gradle.plugin.com.marklogic:ml-gradle:4.0.4"
+ }
+</code></pre>
+  </li>
+  <li>Copy the contents of the Grove modules to the Data Hub project. Copy
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> grove/marklogic/src/main/ui-modules
+    
+ to 
+    
+ data-hub/src/main/ui-modules
+</code></pre></div>    </div>
+  </li>
+  <li>Copy the contents of the Grove default user profile and a dictionary document to the Data Hub project. Copy the files in
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> grove/marklogic/src/main/ui-data
+    
+ to 
+    
+ data-hub/src/main/ui-data
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Edit the query options used by your Grove middle-tier’s search route (by default, these query options are called <code class="highlighter-rouge">all</code> and are found in the <code class="highlighter-rouge">data-hub/src/main/ui-modules/options/all.xml</code> file) to remove the following blocks:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"eyecolor"</span><span class="nt">&gt;</span>
+   ...
+ <span class="nt">&lt;/constraint&gt;</span>
+ <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"docFormat"</span><span class="nt">&gt;</span>
+   ...
+ <span class="nt">&lt;/constraint&gt;</span>
+ <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"gender"</span><span class="nt">&gt;</span>
+   ...
+ <span class="nt">&lt;/constraint&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Make any other necessary changes to the query options file. For example, you may need to update the <code class="highlighter-rouge">&lt;additional-query&gt;</code> specifying that only docs in the <code class="highlighter-rouge">data</code> collection are returned.  There may be a Data Hub specific collections that are a natural fit to limit the search results for your Grove application.  For example,
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;cts:collection-query&gt;</span>
+   <span class="nt">&lt;cts:uri&gt;</span>Entity1<span class="nt">&lt;/cts:uri&gt;</span>
+   <span class="nt">&lt;cts:uri&gt;</span>Entity2<span class="nt">&lt;/cts:uri&gt;</span>
+    .....
+ <span class="nt">&lt;/cts:collection-query&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">./gradlew mlLoadModules</code> from inside the <code class="highlighter-rouge">data-hub</code> directory. This command will deploy the new modules and supporting documents.</p>
+  </li>
+  <li>Delete the contents of <code class="highlighter-rouge">grove/marklogic</code>.</li>
+</ol>
+
+<h2 id="alternative-approach-to-run-grove-with-the-data-hub">Alternative Approach to Run Grove with the Data Hub</h2>
+
+<p>In order to run a Grove UI project alongside the MarkLogic Data Hub project, we alternatively suggest creating a Grove project-specific app-server, which has its own modules database but points at the content database with the data you wish to visualize: most often the Data Hub project’s FINAL database. The Data Hub project will be responsible for managing the content database (including setting up indexes - needed for facets - and security permissions), as well as the content database’s related triggers and schemas databases, while the Grove project will manage the Grove project’s specific app-server and modules database.  Security will be a shared responsibility, where the Data Hub has to give low-level access to data, and Grove can arrange higher-level access.</p>
+
+<p>Note that this implies some coordination between the Data Hub project and Grove. If possible, it is easiest to manage both projects within the same code repository. The Grove files should all be within a dedicated parent directory. (For example, <code class="highlighter-rouge">grove/ui</code>, <code class="highlighter-rouge">grove/middle-tier</code>, and <code class="highlighter-rouge">grove/marklogic</code>. Note that there is nothing magic about the <code class="highlighter-rouge">grove</code> directory name, so call it whatever you want.)</p>
+
+<p>If you need more independence than that provided by this approach, you may consider replicating the Data Hub data to a Grove-specific content database - but that is currently beyond the scope of this guide.</p>
+
+<p>You can accomplish this approach by making some changes inside the <code class="highlighter-rouge">marklogic</code> directory of your Grove project. Grove projects generated using the grove-cli’s <code class="highlighter-rouge">grove new</code> command ship with this <code class="highlighter-rouge">marklogic</code> directory, which contains configuration files for a standalone MarkLogic database, optimized for Grove’s sample data set.</p>
+
+<p>The advantages to this approach include:</p>
+
+<ul>
+  <li>It does not pollute the Data Hub project’s modules database.</li>
+  <li>It creates a line between configuration to support the Data Hub project and configuration to support the Grove UI project (with some exceptions, described in the next section on downsides). For example, the Grove project can set up its own users, roles, and security permissions (though those roles need to be consistent with doc permissions set in Data Hub).</li>
+</ul>
+
+<p>There are some downsides to this approach:</p>
+
+<ul>
+  <li>You will have two different ml-gradle installations, one for the Grove project and one for the Data Hub project, which can be confusing and time-consuming, because you have to run gradle tasks in two places, for example when bootstrapping the project. You could mitigate this by creating scripts that automatically run gradle scripts in both places.</li>
+  <li>You will have to add some configuration to the Data Hub project in order to support the Grove UI. For example, the Data Hub project may need to add new indexes in order to support facets for the Grove UI. Content permissions will need to correspond to Grove users and roles. And if triggers and schemas are desired for the Grove project, those will have to be set up in the Data Hub ml-gradle configuration. (Note that this kind of demand will come from any downstream system connecting to a Data Hub content database.)</li>
+  <li>Any CRUD operations performed by the Grove project will write to the Data Hub project’s content database.</li>
+</ul>
+
+<h3 id="how-to-implement-the-alternative-approach-step-by-step">How to implement the alternative approach, step-by-step:</h3>
+
+<ol>
+  <li>
+    <p>Run <code class="highlighter-rouge">grove config</code> at the top-level of your Grove project to ensure that, for example, an available port is specified.</p>
+  </li>
+  <li>
+    <p>Delete <code class="highlighter-rouge">content-database.json</code>, <code class="highlighter-rouge">schemas-database.json</code>, and <code class="highlighter-rouge">triggers-database.json</code> from <code class="highlighter-rouge">marklogic/src/main/ml-config/databases/</code>.</p>
+  </li>
+  <li>
+    <p>Edit <code class="highlighter-rouge">marklogic/src/main/ml-config/servers/app-server</code> and <code class="highlighter-rouge">marklogic/src/main/ml-config/rest-api.json</code> to point to the correct content-database name.</p>
+  </li>
+  <li>
+    <p>Edit the search options used by your Grove middle-tier’s search route (by default, these search options are called <code class="highlighter-rouge">all</code> and are found in the <code class="highlighter-rouge">marklogic/src/main/ml-modules/options/all.xml</code> file) to remove the following blocks:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"eyecolor"</span><span class="nt">&gt;</span>
+   ...
+ <span class="nt">&lt;/constraint&gt;</span>
+ <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"docFormat"</span><span class="nt">&gt;</span>
+   ...
+ <span class="nt">&lt;/constraint&gt;</span>
+ <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"gender"</span><span class="nt">&gt;</span>
+   ...
+ <span class="nt">&lt;/constraint&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Make any other necessary changes to the search options file. For example, you may need to remove the <code class="highlighter-rouge">&lt;additional-query&gt;</code> specifying that only docs in the <code class="highlighter-rouge">data</code> collection are returned.</p>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">./gradlew mlDeploy</code> from inside the <code class="highlighter-rouge">marklogic</code> directory. This command will deploy the new configuration, but it will not change the Data Hub project’s content database, because you have removed all related configuration files.</p>
+  </li>
+</ol>
+
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                    Copyright © 2016-2021 MarkLogic Corporation. All Rights Reserved. MARKLOGIC® is a registered trademark of MarkLogic Corporation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="/grove/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="/grove/assets/bundle.js" id="1"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79716597-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+

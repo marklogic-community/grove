@@ -1,0 +1,390 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html itemscope itemtype="http://schema.org/Organization" id="ie6" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 7 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie7" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 8 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie8" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 9 ]>   <html itemscope itemtype="http://schema.org/Organization" id="ie9" class="ie" lang="en-US"><![endif]-->
+<!--[if gt IE 9]><!--><html itemscope itemtype="http://schema.org/Organization" lang="en-US"><!--<![endif]-->
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>Getting Started with Grove - Grove Documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Favicons -->
+    <!--link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64 96x96" href="/grove/favicon.ico"-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/grove/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/grove/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/grove/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/grove/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/grove/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/grove/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/grove/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="application-name" content="Grove Documentation - Grove, a toolkit full of tooling, templates, and other resources that help with building UI applications on top of MarkLogic.">
+
+    <!--script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-6638631-15', 'auto');
+      ga('send', 'pageview');
+
+    </script-->
+
+    <!-- Facebook Pixel Code -->
+    <!--script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1879746318909687'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1879746318909687&ev=PageView&noscript=1"
+    /></noscript-->
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+    <link type="text/css" rel="stylesheet" href="/grove/assets/bundle.css">
+</head>
+<body class="">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/grove/">
+                  <span class="logo">
+                    <img src="/grove/images/logo-marklogic.svg" width="180px" height="38px" alt="MarkLogic" title="MarkLogic" scale="0">
+                  </span>
+                  Grove Documentation
+                  <img style="filter: invert(61%);" src="/grove/images/grove-favicon.svg" width="36x" height="36px">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                        <li  >
+                            
+                            <a href="/grove/">About Grove</a>
+                            
+                        </li>
+                    
+                        <li  >
+                            
+                            <a href="https://github.com/marklogic-community/grove">GitHub</a>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="side-nav col-md-3 hide-small">
+          <div class="panel panel-default">
+  <div class="panel-heading">Navigation</div>
+  <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/">About Grove</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/how-does-it-work/">How does it work?</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="">Guides</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/structure/">Structure of Grove Projects</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item active"  >
+    
+    <a href="/grove/guides/getting-started/">Getting Started</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react-vs-vue/">React vs. Vue</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/data-hub-framework/">Grove and the Data Hub</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/">React UI</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/detail">Customize the Detail Page</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/search-results">Customize the Search Results</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/header-image">Customize the Header Image</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/recipes/styles">Customize the Styles</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/guides/react/additional-components">Additional components</a>
+    
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="">Recipes</a>
+    
+    
+      <ul class="list-group">
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/recipes/recipe-contributions/">Add your recipe!</a>
+    
+    
+  </li>
+  
+</ul>
+
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="/grove/faqs/">FAQs</a>
+    
+    
+  </li>
+  
+  <li  class="list-group-item"  >
+    
+    <a href="https://github.com/marklogic-community/grove">Grove on GitHub</a>
+    
+    
+  </li>
+  
+</ul>
+
+</div>
+
+        </div>
+        <div class="col-md-9">
+          <p>This guide demonstrates how to create a new Grove project.</p>
+
+<h1 id="quick-creation-of-a-new-grove-project">Quick Creation of a new Grove project:</h1>
+
+<p>The commands listed below should be typed into a terminal/console window.</p>
+
+<h2 id="1-check-prerequisites">1. Check Prerequisites</h2>
+
+<ul>
+  <li><strong>MarkLogic</strong>: If you have not yet done so, <a href="https://developer.marklogic.com/products">install MarkLogic 9 or 10</a>, start it, and initialize it at <code class="highlighter-rouge">localhost:8001</code>.</li>
+  <li><strong>Node.js</strong>: Check if you have Node.js version 10.16.0 or above installed by running <code class="highlighter-rouge">node -v</code>. If not, <a href="https://nodejs.org/">install Node.js</a>.</li>
+  <li><strong>npm</strong>: Check if you have npm version 6.9.0 or above installed by running <code class="highlighter-rouge">npm -v</code>. If not, run <code class="highlighter-rouge">npm install -g npm</code> to get the latest.</li>
+  <li><strong>Git</strong>: The grove-cli requires git. Check if you have git installed by running <code class="highlighter-rouge">git --version</code>. If not, <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">install Git</a>.</li>
+  <li><strong>Java</strong>: (If you are an advanced user and know that you do not plan to use the included ml-gradle deployer, you can skip the Java requirement.) Check if you have Java 1.8 or above installed by running <code class="highlighter-rouge">java -version</code>. If not, <a href="https://www.java.com/en/download/help/download_options.xml">install Java 1.8</a>. Java is required because the generated Grove project will use <a href="https://github.com/marklogic-community/ml-gradle">ml-gradle</a> to administer MarkLogic and <a href="https://developer.marklogic.com/products/mlcp">mlcp</a> to load data.</li>
+</ul>
+
+<h2 id="2-install-the-grove-cli">2. Install the grove-cli</h2>
+
+<p>The <a href="https://github.com/marklogic-community/grove-cli">grove-cli</a> is the best way to install and configure new Grove Projects. Run the following to install the grove-cli:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">-g</span> @marklogic-community/grove-cli
+</code></pre></div></div>
+
+<p>This makes the <code class="highlighter-rouge">grove</code> command available on your command-line.</p>
+
+<h2 id="3-generate-a-new-project">3. Generate a new Project:</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grove new your-project-name
+</code></pre></div></div>
+
+<p>Answer the questions in the prompts in order to select the React or Vue UI, as desired.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>your-project-name
+</code></pre></div></div>
+
+<h2 id="4-configure-your-project">4. Configure your project:</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grove config
+</code></pre></div></div>
+
+<p>This command will update settings in your React or Vue UI, Node middle-tier, and the provided ml-gradle project. It is helpful to use the grove-cli for this task, so the configuration is the same for all parts of your project.</p>
+
+<h2 id="5-optional-provision-marklogic">5. OPTIONAL: Provision MarkLogic</h2>
+
+<p>We provide an ml-gradle configuration that matches your Grove settings as a convenience in the <code class="highlighter-rouge">marklogic</code> directory of your generated Project. You can also just point Grove at an existing MarkLogic app server using the <code class="highlighter-rouge">grove config</code> command. If you are running alongside the DataHub Framework, take a look at the notes in <a href="/grove/guides/data-hub-framework/">Grove and Data Hub Framework</a>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>marklogic
+./gradlew mlDeploy
+<span class="nb">cd</span> ..
+</code></pre></div></div>
+
+<p>Or, on Windows:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>marklogic
+gradlew.bat mlDeploy
+<span class="nb">cd</span> ..
+</code></pre></div></div>
+
+<h2 id="6-install-npm-dependencies">6. Install npm dependencies</h2>
+
+<p>Run from the top-level of your generated Project:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+</code></pre></div></div>
+
+<h2 id="7-start-development-servers-to-run-your-grove-project">7. Start development servers to run your Grove Project</h2>
+
+<p>Run from the top-level of your generated Project:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
+</code></pre></div></div>
+
+<h2 id="8-optional-load-sample-data">8. Optional: Load sample data</h2>
+
+<p>This command uses <a href="https://github.com/marklogic-community/ml-gradle">ml-gradle</a> and <a href="https://developer.marklogic.com/products/mlcp">mlcp</a> to load 3000 sample json documents, about people. These documents are stored in the <code class="highlighter-rouge">marklogic/data</code> directory of this source code.</p>
+
+<p>This Template includes ml-gradle in the <code class="highlighter-rouge">marklogic</code> directory. You must be in that directory to invoke ml-gradle commands.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>marklogic
+./gradlew loadSampleData
+<span class="nb">cd</span> ..
+</code></pre></div></div>
+
+<p>Or, on Windows:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>marklogic
+gradlew.bat loadSampleData
+<span class="nb">cd</span> ..
+</code></pre></div></div>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>If you have created a React UI, see the <a href="/grove/guides/react/">React Developers Guide</a> for information.</p>
+
+<h1 id="very-quick-start">VERY Quick Start</h1>
+
+<p>This sections leverages the grove demo command, which is designed for limited use cases. In most cases, it is not appropriate for normal Project development. But, if all prerequisites are in place, it will quickly start a running Grove Project loaded with sample data.</p>
+
+<p>First, start MarkLogic. Then, the following grove-cli command will clone the application source code, create a content database, create a modules database, create a MarkLogic REST server, load sample people data, install the Web app dependencies locally, and start your application.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grove demo your-demo-name
+</code></pre></div></div>
+
+<p>The grove-cli will walk you through the creation of a running Grove project, based on the code in this repository.</p>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                    Copyright © 2016-2021 MarkLogic Corporation. All Rights Reserved. MARKLOGIC® is a registered trademark of MarkLogic Corporation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="/grove/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="/grove/assets/bundle.js" id="1"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79716597-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
