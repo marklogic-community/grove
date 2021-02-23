@@ -23,12 +23,12 @@ The Grove React flavor can be customized to suit the needs of your application. 
 recipes to make Grove your own.
 
 * [Detail Page](/grove{% link _pages/guides/react/recipes/detail.md %})
-* [Search Results]({% link _pages/guides/react/recipes/search-results.md %})
-* [Header Image]({% link _pages/guides/react/recipes/header-image.md %})
-* [Styles]({% link _pages/guides/react/recipes/styles.md %})
+* [Search Results](/grove{% link _pages/guides/react/recipes/search-results.md %})
+* [Header Image](/grove{% link _pages/guides/react/recipes/header-image.md %})
+* [Styles](/grove{% link _pages/guides/react/recipes/styles.md %})
 
 ## Additional Components
 
-The Grove team has developed a number of [additional components]({% link _pages/guides/react/additional-components.md %}) that might help you develop faster with Grove.
+The Grove team has developed a number of [additional components](/grove{% link _pages/guides/react/additional-components.md %}) that might help you develop faster with Grove.
 
 <br/>
